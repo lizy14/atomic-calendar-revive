@@ -278,7 +278,8 @@ export class EventView implements ICalendarView {
 		if (event.isAllDayEvent && event.isMultiDay && event.startDateTime.isAfter(today, 'day')) {
 			return html`
 				${config.fullDayEventText ?? localize('common.fullDayEventText')},
-				${(config.untilText! ?? localize('common.untilText')).toLowerCase()} ${event.endDateTime.format(config.eventDateFormat)}
+				${(config.untilText! ?? localize('common.untilText')).toLowerCase()}
+				${event.endDateTime.format(config.eventDateFormat)}
 			`;
 		}
 		// 2. Is an all day event, over multiple days and the start time is before today or the
@@ -290,7 +291,8 @@ export class EventView implements ICalendarView {
 		) {
 			return html`
 				${config.fullDayEventText ?? localize('common.fullDayEventText')},
-				${(config.untilText! ?? localize('common.untilText')).toLowerCase()} ${event.endDateTime.format(config.eventDateFormat)}
+				${(config.untilText! ?? localize('common.untilText')).toLowerCase()}
+				${event.endDateTime.format(config.eventDateFormat)}
 			`;
 		}
 		// 3. Is an all day event, not matching 1 or 2 -> 'All Day'
@@ -299,7 +301,8 @@ export class EventView implements ICalendarView {
 		}
 		// 4. Starts before today, ends after today -> 'Until end date'
 		else if (event.startDateTime.isBefore(today, 'day') && event.endDateTime.isAfter(today, 'day')) {
-			return html`${config.untilText! ?? localize('common.untilText')} ${event.endDateTime.format(config.eventDateFormat)}`;
+			return html`${config.untilText! ?? localize('common.untilText')}
+			${event.endDateTime.format(config.eventDateFormat)}`;
 		}
 		// 5. starts before today, ends today -> 'Until end time'
 		else if (
@@ -311,8 +314,8 @@ export class EventView implements ICalendarView {
 		// 6. Does not start before today, ends after start
 		else if (!event.startDateTime.isBefore(today, 'day') && event.endDateTime.isAfter(event.startDateTime, 'day')) {
 			return html`${event.startDateTime.format('LT')},
-			${(config.untilText! ?? localize('common.untilText')).toLowerCase()} ${event.endDateTime.format(config.eventDateFormat)}
-			${event.endDateTime.format('HH:mm')}`;
+			${(config.untilText! ?? localize('common.untilText')).toLowerCase()}
+			${event.endDateTime.format(config.eventDateFormat)} ${event.endDateTime.format('HH:mm')}`;
 		}
 		// 7. anything that doesnt fit -> 'start time - end time'
 		else {
