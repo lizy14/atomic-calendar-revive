@@ -95,7 +95,7 @@ The card date information supports the following locales:
  sv        Swedish
  sk        Slovak
  uk        Ukranian
- zh-cn     Chinese (Simplified)
+ zh-CN     Chinese (Simplified)
 ========= ==============================
 
 .. note:
