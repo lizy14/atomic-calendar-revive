@@ -1,0 +1,121 @@
+{
+	"common": {
+		"version": "版本",
+		"show_warning": "显示警告",
+		"error": "错误",
+		"description": "适用于 Home Assistant Lovelace 的高级日历卡片。",
+		"fullDayEventText": "全天",
+		"untilText": "直到",
+		"noEventText": "没有事件",
+		"noEventsForNextDaysText": "未来几天没有事件",
+		"hiddenEventText": "个事件已隐藏"
+	},
+	"ui": {
+		"common": {
+			"previous": "上一个",
+			"next": "下一个",
+			"week": "周"
+		}
+	},
+	"errors": {
+		"invalid_configuration": "配置无效",
+		"update_card": "无法从 Home Assistant 组件加载日历",
+		"no_entities": "你尚未指定任何实体"
+	},
+	"required": {
+		"name": "必填",
+		"secondary": "此卡片正常运行所需的选项"
+	},
+	"main": {
+		"name": "主要选项",
+		"secondary": "全局应用的选项",
+		"fields": {
+			"name": "名称",
+			"showColors": "显示颜色",
+			"maxDaysToShow": "最多显示天数",
+			"showLocation": "显示位置图标",
+			"showLoader": "显示加载动画",
+			"showDate": "在卡片上显示日期",
+			"showDeclined": "显示已拒绝的事件",
+			"sortBy": "排序方式",
+			"allDayBottom": "在底部显示全天事件",
+			"hideFinishedEvents": "隐藏已结束的事件",
+			"dateFormat": "日期格式",
+			"defaultMode": "默认模式",
+			"linkTarget": "链接目标",
+			"refreshInterval": "刷新间隔",
+			"showRelativeTime": "显示相对时间",
+			"firstDayOfWeek": "一周的第一天",
+			"cardHeight": "卡片高度",
+			"hideDuplicates": "隐藏重复项",
+			"showMultiDay": "拆分多日事件",
+			"showMultiDayEventParts": "显示多日事件部分",
+			"eventTitle": "设置空白事件标题",
+			"compactMode": "启用紧凑模式",
+			"titleLength": "标题最大长度（0 表示不限制）",
+			"descLength": "描述最大长度（0 表示不限制）",
+			"showAllDayEvents": "显示全天事件",
+			"offsetHeaderDate": "偏移标题日期",
+			"startDaysAhead": "显示从今天起 `x` 天后开始的事件"
+		}
+	},
+	"event": {
+		"name": "事件模式",
+		"secondary": "事件模式专用选项",
+		"fields": {
+			"showCurrentEventLine": "在事件前显示线条？",
+			"showProgressBar": "显示进度条？",
+			"showMonth": "显示月份？",
+			"showDescription": "显示描述？",
+			"disableEventLink": "禁用事件标题中的链接？",
+			"disableLocationLink": "禁用位置链接？",
+			"showNoEventsForToday": "显示今天没有事件？",
+			"showFullDayProgress": "显示全天事件进度？",
+			"untilText": "“直到”文本：",
+			"noEventText": "今天没有事件文本：",
+			"noEventsForNextDaysText": "未来几天没有事件文本：",
+			"fullDayEventText": "全天事件文本：",
+			"showEventIcon": "显示事件图标",
+			"showHiddenText": "显示隐藏事件文本？",
+			"hiddenEventText": "隐藏事件文本：",
+			"showCalendarName": "显示日历名称",
+			"showWeekNumber": "显示周数",
+			"showEventDate": "显示事件日期",
+			"showDatePerEvent": "在每个事件旁显示日期",
+			"showTimeRemaining": "显示剩余时间",
+			"showAllDayHours": "显示全天事件文本",
+			"hoursOnSameLine": "在事件行上显示时间",
+			"eventDateFormat": "事件日期格式"
+		}
+	},
+	"calendar": {
+		"name": "日历模式",
+		"secondary": "日历模式专用选项",
+		"fields": {
+			"showLastCalendarWeek": "显示最后一个日历周",
+			"disableCalEventLink": "禁用日历事件链接",
+			"disableCalLocationLink": "禁用日历位置链接",
+			"calShowDescription": "显示描述",
+			"disableCalLink": "禁用日历链接"
+		}
+	},
+	"planner": {
+		"name": "规划模式",
+		"secondary": "规划模式专用选项",
+		"fields": {
+			"plannerDaysToShow": "显示天数",
+			"plannerRollingWeek": "滚动周（从今天开始）"
+		}
+	},
+	"appearance": {
+		"name": "外观",
+		"secondary": "自定义颜色等。",
+		"main": {
+			"name": "主要",
+			"secondary": "全局颜色设置"
+		},
+		"fields": {
+			"dimFinishedEvents": "淡化已结束的事件？"
+		}
+	}
+}

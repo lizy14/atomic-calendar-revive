@@ -44,7 +44,8 @@ The Configuration editor supports the following locales:
  ru        Russian
  sl        Slovenian
  sv        Swedish
- uk        Ukranian
+ uk        Ukrainian
+ zh-CN     Chinese (Simplified)
 ========= ===========
 
 
@@ -93,7 +94,8 @@ The card date information supports the following locales:
  sl        Slovenian
  sv        Swedish
  sk        Slovak
- uk        Ukranian
+ uk        Ukrainian
+ zh-CN     Chinese (Simplified)
 ========= ==============================
 
 .. note:

@@ -18,6 +18,7 @@ import * as sk from './languages/sk.json';
 import * as sl from './languages/sl.json';
 import * as sv from './languages/sv.json';
 import * as uk from './languages/uk.json';
+import * as zh_CN from './languages/zh-CN.json';
 import { globalData } from '../helpers/globals';
 
 const languages: object = {
@@ -40,6 +41,7 @@ const languages: object = {
 	sl,
 	sv,
 	uk,
+	'zh-CN': zh_CN,
 };
 
 const DEFAULT_LANG = 'en';
