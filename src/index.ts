@@ -183,7 +183,7 @@ export class AtomicCalendarRevive extends LitElement implements ICardHost {
 					<div class="modal-event-title">${event.title}</div>
 					<div class="modal-event-time">
 						${event.isAllDayEvent
-							? localize('common.fullDayEventText')
+							? (this._config.fullDayEventText ?? localize('common.fullDayEventText'))
 							: `${event.startDateTime.format('LT')} - ${event.endDateTime.format('LT')}`}
 					</div>
 				</div>

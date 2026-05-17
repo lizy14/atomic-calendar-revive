@@ -80,25 +80,6 @@ export function getDate(config: atomicCardConfig) {
 }
 
 /**
- * ready-to-use function to remove year from moment format('LL')
- * @param {moment}
- * @return {String} [month, day]
- */
-
-export function getCurrDayAndMonth(locale) {
-	const today = locale.format('LL');
-	return today
-		.replace(locale.format('YYYY'), '') // remove year
-		.replace(/\s\s+/g, ' ') // remove double spaces, if any
-		.trim() // remove spaces from the start and the end
-		.replace(/[??]\./, '') // remove year letter from RU/UK locales
-		.replace(/de$/, '') // remove year prefix from PT
-		.replace(/b\.$/, '') // remove year prefix from SE
-		.trim() // remove spaces from the start and the end
-		.replace(/,$/g, ''); // remove comma from the end
-}
-
-/**
  * Calculates the event part number to display on the card
  * @param config card configuration
  * @param event event to be checked
