@@ -124,7 +124,7 @@ export class PlannerView implements ICalendarView {
 								${getTitleHTML(this.config, event, this.hass, 'Planner')}
 								<div class="planner-event-time">
 									${event.isAllDayEvent
-										? localize('common.fullDayEventText')
+										? (this.config.fullDayEventText ?? localize('common.fullDayEventText'))
 										: `${event.startDateTime.format('LT')}${this.config.showEndTime ? ` - ${event.endDateTime.format('LT')}` : ''}`}
 								</div>
 							</div>
