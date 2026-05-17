@@ -45,6 +45,22 @@ import { atomicCardConfig } from './types/config';
 import { HomeAssistant, TimeFormat } from './types/homeassistant';
 import { LovelaceCardEditor } from './types/lovelace';
 
+type DayjsWithLocales = typeof dayjs & { Ls?: Record<string, unknown> };
+
+const resolveDayjsLocale = (language: string): string => {
+	const requestedLanguage = language.toLowerCase();
+	const baseLanguage = requestedLanguage.split('-')[0];
+	const loadedLocales = (dayjs as DayjsWithLocales).Ls ?? {};
+
+	if (loadedLocales[requestedLanguage]) {
+		return requestedLanguage;
+	}
+	if (loadedLocales[baseLanguage]) {
+		return baseLanguage;
+	}
+	return dayjs.locale();
+};
+
 @customElement('atomic-calendar-revive')
 export class AtomicCalendarRevive extends LitElement implements ICardHost {
 	@property() public hass!: HomeAssistant;
@@ -102,13 +118,14 @@ export class AtomicCalendarRevive extends LitElement implements ICardHost {
 	protected render(): TemplateResult | void {
 		setHass(this.hass);
 		if (this.firstrun) {
-			this.language =
+			const language =
 				typeof this._config.language != 'undefined'
 					? this._config.language!
 					: this.hass.locale
 						? this.hass.locale.language.toLowerCase()
 						: this.hass.language.toLowerCase();
 
+			this.language = resolveDayjsLocale(language);
 			dayjs.locale(this.language);
 
 			const timeFormat =
