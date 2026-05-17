@@ -40,3 +40,4 @@ import 'dayjs/locale/sl';
 import 'dayjs/locale/sv';
 import 'dayjs/locale/sk';
 import 'dayjs/locale/uk';
+import 'dayjs/locale/zh-cn';
